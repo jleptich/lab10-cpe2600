@@ -18,20 +18,34 @@
 /**
  * @brief Signal handler for SIGINT - prints a message and exits
  */
-void handle_signal() {
+
+ //updated the handler so it can actually have the parameters needed to be used inside signal
+void handle_signal(int var) {
     printf("Received a signal\n");
-    exit(1);
+    return;
 }
 
 int main() {
 
     // Register for the signal
-    signal(SIGINT, handle_signal);
-
+    void (*sig_handle)(int);
+    sig_handle = handle_signal;
+    signal(SIGINT, &handle_signal);
+    int pid = getpid();
+    int count = 0;
     // Wait until a signal is received
     while(1) {
         printf("Sleeping\n");
         sleep(1);
+        //sends a sigint and the program keeps running
+        if(count == 2){
+            kill(pid, SIGINT);
+        }
+        //kills the signal and closes the program
+        if(count == 10){
+            kill(pid, SIGKILL);
+        }
+        count++;
     }
 
     return 0;
