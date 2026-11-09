@@ -1,8 +1,9 @@
 /**
- * File: 
- * Modified by:
+ * File: signal_sigaction.c
+ * Modified by: Joseph Leptich
  * 
  * Brief summary of program:
+ * Learning to use sigaction function, when a SIGUSR1 signal is detected the handler outputs the programs PID
  */
 
  #include <stdio.h>

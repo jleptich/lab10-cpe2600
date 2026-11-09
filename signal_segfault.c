@@ -4,9 +4,10 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Joseph Leptich
  * 
- * Brief summary of modifications:
+ * Brief summary of modifications: 
+ * Messed around with sigsegv to see what happens when the handler does not address a fault
  */
 
 

@@ -4,9 +4,11 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Joseph Leptich
  * 
  * Brief summary of modifications:
+ * updated the handler parameters to fit with the signal function call, 
+ * experimented with the different ways to send SIGINT via any ctrl+ command and with the kill function
  */
 
 

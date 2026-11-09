@@ -1,8 +1,9 @@
 /**
- * File: 
- * Modified by:
+ * File: signal_alarm.c
+ * Modified by: Joseph Leptich
  * 
- * Brief summary of program:
+ * Brief summary of program: 
+ * sets the alarm function for five seconds, when the alarm goes off the handler prints it out
  */
 
 #include <stdio.h>
