@@ -17,7 +17,6 @@ void handler(int sig, siginfo_t *info, void *ucontext){
 
 
  int main(){
-    sleep(1);
     //printf("PID: %d",getpid());
 
     //sets up the sigaction struct
@@ -33,7 +32,7 @@ void handler(int sig, siginfo_t *info, void *ucontext){
         snprintf(buff, sizeof(buff),"%d",getppid());
     char *args[] = {"sender",buff,NULL};
     char *envp[] = {NULL};
-    execve("./send", args, envp);
+    execve("./send", args, envp);   //Executes the send executable file from send_signal
     }
     //does nothing
     while(1){

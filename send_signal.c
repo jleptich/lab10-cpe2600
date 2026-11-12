@@ -22,6 +22,7 @@
     }
     //seeding the random function
     srand(time(NULL));
+    int count = 0;
     //every three seconds output a random value to the reciving program
     while(1){
         sleep(3);
@@ -30,5 +31,11 @@
         union sigval value;
         value.sival_int = i;
         sigqueue(pid, SIGUSR1, value);
+        count++;
+        if(count == 5){
+            kill(pid,SIGKILL);
+            printf("\nKilling signal\n");
+            exit(1);
+        }
     }
  }
